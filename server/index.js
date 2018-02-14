@@ -1,11 +1,9 @@
 //  *** Install your packages *** //
 const express = require('express');
 const bodyParser = require('body-parser');
-const session = require('require-session');
+const session = require('express-session');
 require('dotenv').config();
-
-
-
+        
 // Middleware
 
 const checkForSession = require ('./middlewares/checkForSession.js');
@@ -49,7 +47,7 @@ app.delete( '/api/cart', cart_controller.delete );
 
 
 // *** set up application to listen on port 3000.
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 app.listen( port, () => {console.log(`Server listening port ${port}.`);} );
 
 //  Next, add middleware that will check to see if a session has been created.
